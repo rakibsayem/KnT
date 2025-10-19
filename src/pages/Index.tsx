@@ -1,17 +1,12 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Webview from "@/components/Webview";
 
-import { MadeWithDyad } from "@/components/made-with-dyad";
+const TARGET_URL = "http://isn.ispsimple.com";
 
 const Index = () => {
+  // Use h-screen and w-screen to ensure the iframe fills the entire viewport, mimicking a native webview.
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-      <MadeWithDyad />
+    <div className="w-screen h-screen p-0 m-0 overflow-hidden">
+      <Webview url={TARGET_URL} />
     </div>
   );
 };
